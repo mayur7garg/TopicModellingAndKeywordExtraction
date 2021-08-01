@@ -14,7 +14,9 @@ def clean_text(text):
 
     no_punc_text = ''.join(chars)
 
-    words = [word for word in no_punc_text.split(' ') if not (
-        word in en_stopwords or word.isspace() or word.isnumeric())]
+    words = [word for word in no_punc_text.split(' ') if not (len(word) == 0 or
+                                                              word in en_stopwords or
+                                                              word.isspace() or
+                                                              word.isnumeric())]
 
     return ' '.join(words)
